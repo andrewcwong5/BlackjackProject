@@ -6,6 +6,7 @@ public class BlackjackApp {
 
 	Casino cas = new Casino();
 	Scanner kb = new Scanner(System.in);
+	private boolean endProgram = false;
 	
 	public static void main(String[] args) {
 
@@ -15,7 +16,9 @@ public class BlackjackApp {
 	}
 
 	private void run() {
-		mainMenu();
+		do {
+			mainMenu();
+		} while(endProgram == false);
 	}
 	
 	private void mainMenu() {
@@ -33,9 +36,11 @@ public class BlackjackApp {
 			cas.playBlackjack();
 			break;
 		case 2:
+			System.out.println("Feature coming soon");
 			break;
 		case 3:
-			System.out.println("Thanks for playing.");
+			System.out.println("Thanks for playing. End of Program");
+			endProgram = true;
 			break;
 		default:
 			System.out.println("Invalid selection, choose again 1-5");
