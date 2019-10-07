@@ -20,7 +20,7 @@ public class Casino {
 
 	public void playBlackjack() {
 		keepLooping = true;
-		
+		deck = new PlayingCards.Deck();
 		 while (keepLooping == true) {
 			
 			deck.shuffle(); 
@@ -146,6 +146,11 @@ public class Casino {
 			System.out.println("Dealer got blackjack, you lose. Play again? yes or no");
 			String input = kb.next();
 			playAgain(input);
+		}
+		else if(p1.isBlackjack() == true ) {
+			System.out.println("You got blackjack, you lose. Play again? yes or no");
+			String input = kb.next();
+			playAgain(input); 
 		}
 	}
 
