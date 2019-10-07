@@ -22,11 +22,14 @@ public class Casino {
 		
 		 while (keepLooping == true) {
 			
-			deck.shuffle();
+			deck.shuffle(); 
+			
 			System.out.println("Starting new round");
-			newRound = false; p1.clear(); d1.clear();
+			p1.clear(); d1.clear();
+			newRound = false;
 			
 			while (newRound == false) { 
+				
 				while (p1.handCards.size() < 2) {
 				
 					Card c1 = deck.dealCard();
@@ -35,15 +38,13 @@ public class Casino {
 					d1.addCard(c2);
 					Card c3 = deck.dealCard();
 					p1.addCard(c3);
-					p1.isBlackjack();
-					d1.isBlackjack();
-					
+					p1.isBlackjack(); d1.isBlackjack();
 					gameStatus();
 					blackJackCheck();
-					
 				} 
 					if (deck.checkDeckSize() < 10) {
 						keepLooping = false;
+						System.out.println("deck out of cards");
 					}
 				if (keepLooping == false) 
 					break;
@@ -93,12 +94,6 @@ public class Casino {
 	}
 	private void playerStatus() {
 		
-		if (p1.isBlackjack() == true ) {
-			System.out.println("Blackjack. You win this round. Play again? yes or no");
-			String input = kb.next();
-			playAgain(input);
-			
-		}
 		if (p1.isBust() == true) {
 			System.out.println("You busted, you lose. Play again? yes or no");
 			String input = kb.next();
