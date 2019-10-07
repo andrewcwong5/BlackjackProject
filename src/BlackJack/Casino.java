@@ -11,7 +11,7 @@ public class Casino {
 	BlackjackHand d1 = new DealerHand();
 	
 	PlayingCards.Deck deck = new PlayingCards.Deck();
-	private boolean keepLooping = true;
+	private boolean keepLooping;
 	private boolean newRound = false;
 	
 	public Casino() {
@@ -19,6 +19,7 @@ public class Casino {
 	}
 
 	public void playBlackjack() {
+		keepLooping = true;
 		
 		 while (keepLooping == true) {
 			
